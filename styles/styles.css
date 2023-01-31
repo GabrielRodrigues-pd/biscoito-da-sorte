@@ -1,0 +1,122 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(45deg, #190361, #bb00ff);
+  animation: gradient 10s ease infinite;
+  background-size: 200% 200%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app{
+  background-color: white;
+  width: 428px;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.8);
+}
+.app.active{
+  animation: flip-scale-2-hor-top 1s linear both;
+}
+
+.app h1{
+  font-size: 24px;
+  margin-top: 48px;
+  margin-bottom: 14px;
+  color: #34355B;
+  text-align: center;
+}
+.app p{
+  font-weight: 400;
+  text-align: center;
+  color: #34355B;
+  font-size: 15px;
+  max-width: 300px;
+  
+}
+.btn{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 48px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #FF9500;
+  cursor: pointer;
+}
+.btn.btnHiden{
+  display: none;
+}
+.btn:hover{
+  background-color: #e68600;
+}
+.app p.active{
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: aliceblue;
+  font-weight: 400 italic;
+  padding: 10px;
+  filter: drop-shadow(3px 2px 2px rgba(0, 0, 0, 0.51));
+}
+.app img{
+  margin-top: 30px;
+  cursor: pointer;
+  margin-bottom: 64px;
+}
+
+.app img.active{
+  background-color: red;
+  animation: shake .2s;
+  animation-iteration-count: 4;
+}
+
+@keyframes shake {
+  0% {margin-left: 0;}
+  25% {margin-left: 7px;}
+  50% {margin-left: 0;}
+  75% {margin-left: -7px;}
+  100% {margin-left: 0;}
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes flip-scale-2-hor-top {
+  0% {
+    transform: translateY(0) rotateX(0) scale(1);
+    transform-origin: 50% 0%;
+  }
+  50% {
+    transform: translateY(-50%) rotateX(-90deg) scale(2);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: translateY(0) rotateX(0) scale(1);
+    transform-origin: 50% 0;
+  }
+}
